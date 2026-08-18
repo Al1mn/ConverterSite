@@ -1,16 +1,11 @@
-function MyButton() {
+import { useState } from 'react'
+
+function App() {
   return (
-    <button>
-      I'm a button
-    </button>
-  );
+    <h1>
+        Hello
+    </h1>
+  )
 }
 
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
-  );
-}
+export default App
