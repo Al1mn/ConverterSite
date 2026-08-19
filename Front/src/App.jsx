@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import React from 'react'
+import Camera from './components/Camera'
+import Terminal from './components/Terminal'
 
 function App() {
   return (
-    <h1>
-        Hello
-    </h1>
+    <div>
+      <Terminal />
+    </div>
   )
 }
 
