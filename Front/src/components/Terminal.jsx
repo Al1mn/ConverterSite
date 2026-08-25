@@ -1,11 +1,31 @@
-import React from "react";
-import '../styles/terminal.css';
+import { useEffect, useRef } from "react";
+import { calculateFontSize } from "../utils/resize";
 
-const Terminal = () => {
+function AsciiDisplay({ asciiText, targetWidth, targetHeight }) {
+    const preRef = useRef(null);
+
+    useEffect(() => {
+        const updateFontSize = () => {
+            if (!preRef.current) return;
+            const fontSize = calculateFontSize(
+                targetWidth,
+                targetHeight,
+                window.innerWidth,
+                window.innerHeight
+            );
+            preRef.current.style.fontSize = `${fontSize}px`;
+        };
+
+        updateFontSize();
+        window.addEventListener("resize", updateFontSize);
+        return () => window.removeEventListener("resize", updateFontSize);
+    }, [targetWidth, targetHeight]);
+
     return (
-        <pre className="ascii-terminal">
+        <pre ref={preRef} className="ascii-output">
+            {asciiText}
         </pre>
     );
-};
+}
 
-export default Terminal
+export default AsciiDisplay;

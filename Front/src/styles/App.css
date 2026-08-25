@@ -1,0 +1,29 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #0f0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ascii-output {
+    white-space: pre;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 0;
+    user-select: none;
+}
